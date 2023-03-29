@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
         details.setOnClickListener{
             if (extras != null) {
                 val game = getDetails(extras.getString("title",""))
-                showLastDetails(game!!)
+                showGameDetails(game!!)
             }
         }
 
@@ -41,12 +41,6 @@ class HomeActivity : AppCompatActivity() {
     private fun showGameDetails(game: Game) {
         val intent = Intent(this, GameDetailsActivity::class.java).apply {
             putExtra("title", game.title)
-        }
-        startActivity(intent)
-    }
-    private fun showLastDetails(game: Game) {
-        val intent = Intent(this, GameDetailsActivity::class.java).apply {
-            putExtra("game_title",game.title)
         }
         startActivity(intent)
     }

@@ -51,8 +51,6 @@ class GameDetailsActivity : AppCompatActivity() {
         if (extras != null) {
             game = getDetails(extras.getString("title", ""))!!
             populateDetails()
-        } else {
-            finish()
         }
         home = findViewById(R.id.home_button)
         home.setOnClickListener{
