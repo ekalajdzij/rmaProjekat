@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
+import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getDetails
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var gameView : RecyclerView

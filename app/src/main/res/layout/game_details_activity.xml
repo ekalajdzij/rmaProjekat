@@ -30,6 +30,7 @@
             android:id="@+id/details_button"
             android:layout_width="152dp"
             android:layout_height="55dp"
+            android:enabled="false"
             android:text="DETAILS" />
 
     </LinearLayout>
