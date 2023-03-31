@@ -115,19 +115,6 @@ class GameData {
                     mutableListOf()
                 ),
                 Game(
-                    "NBA 2K23",
-                    "PlayStation/PC/Xbox",
-                    "08.09.2022",
-                    2.5,
-                    "",
-                    "E4+",
-                    "Visual Concepts",
-                    "2K Sports",
-                    "Sport",
-                    "NBA 2K23 is a 2022 basketball based on the National Basketball Association (NBA).",
-                    mutableListOf()
-                ),
-                Game(
                     "League of Legends",
                     "PC",
                     "27.10.2009",
@@ -139,7 +126,21 @@ class GameData {
                     "Multiplayer online battle arena",
                     "League of Legends is one of the world's most popular video games, developed by Riot Games. It features a team-based competitive game mode based on strategy and outplaying opponents. Players work with their team to break the enemy Nexus before the enemy team breaks theirs.",
                     mutableListOf()
+                ),
+                Game(
+                    "NBA 2K23",
+                    "PlayStation/PC/Xbox",
+                    "08.09.2022",
+                    2.5,
+                    "",
+                    "E4+",
+                    "Visual Concepts",
+                    "2K Sports",
+                    "Sport",
+                    "NBA 2K23 is a 2022 basketball based on the National Basketball Association (NBA).",
+                    mutableListOf()
                 )
+
             )
         }
 
