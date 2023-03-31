@@ -44,7 +44,7 @@ class TestLayout {
     @Test
     fun elementsTest(){
         onView(withId(R.id.logo_image)).check(isCompletelyLeftOf(withId(R.id.home_button)))
-        //onView(withId(R.id.home_button)).check(isTopAlignedWith(withChild(withId(R.id.home_button))))
+        onView(withId(R.id.home_button)).check(isTopAlignedWith(withChild(withId(R.id.home_button))))
         onView(withId(R.id.details_button)).check(isTopAlignedWith(withId(R.id.home_button)))
         onView(withId(R.id.search_button)).check(isCompletelyBelow(withId(R.id.home_button)))
         onView(withId(R.id.search_button)).check(isTopAlignedWith(withId(R.id.search_query_edittext)))
