@@ -59,9 +59,9 @@ class GameDetailsActivity : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java).apply { putExtra("title",game.title) }
             startActivity(intent)
         }
-        ratingAdapter = ReviewAdapter(game.userImpressions!!)
+        ratingAdapter = ReviewAdapter(game.userImpressions?.sortedByDescending { it.timestamp }!!)
         ratings.adapter = ratingAdapter
-        ratingAdapter.updateReviews(game.userImpressions!!)
+        ratingAdapter.updateReviews(game.userImpressions?.sortedByDescending { it.timestamp }!!)
 
     }
 

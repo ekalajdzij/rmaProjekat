@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -28,7 +28,7 @@
 
         <Button
             android:id="@+id/details_button"
-            android:layout_width="152dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:enabled="false"
             android:text="DETAILS" />
@@ -36,8 +36,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="346dp"
-        android:layout_height="625dp"
+        android:layout_width="390dp"
+        android:layout_height="0dp"
         android:layout_marginTop="3dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,8 +50,10 @@
         <TextView
             android:id="@+id/game_title__textview"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:gravity="center" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <ImageView
             android:id="@+id/cover_imageview"
@@ -63,41 +65,54 @@
         <TextView
             android:id="@+id/platform_textview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
 
         <TextView
             android:id="@+id/release_date_textview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
 
         <TextView
             android:id="@+id/esrb_rating_textview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
 
         <TextView
             android:id="@+id/developer_textview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
 
         <TextView
             android:id="@+id/publisher_textview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
 
         <TextView
             android:id="@+id/genre_textview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
 
         <TextView
             android:id="@+id/description_textview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/review_list"
             android:layout_width="match_parent"
-            android:layout_height="348dp" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

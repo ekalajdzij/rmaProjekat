@@ -29,7 +29,7 @@
 
         <Button
             android:id="@+id/details_button"
-            android:layout_width="152dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:text="DETAILS" />
 
@@ -54,7 +54,7 @@
 
         <Button
             android:id="@+id/search_button"
-            android:layout_width="138dp"
+            android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_marginLeft="30dp"
             android:text="SEARCH" />

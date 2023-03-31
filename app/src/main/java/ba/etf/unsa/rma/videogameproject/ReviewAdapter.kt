@@ -7,6 +7,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
 
 class ReviewAdapter(private var impressions: List<UserImpression>
 ):RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
