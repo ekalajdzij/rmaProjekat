@@ -3,7 +3,6 @@ package ba.etf.unsa.rma.videogameproject
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -35,7 +34,7 @@ class GameDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_details_activity)
-        game_title = findViewById(R.id.game_title__textview)
+        game_title = findViewById(R.id.game_title_textview)
         platfrom = findViewById(R.id.platform_textview)
         rdate = findViewById(R.id.release_date_textview)
         esrb = findViewById(R.id.esrb_rating_textview)
