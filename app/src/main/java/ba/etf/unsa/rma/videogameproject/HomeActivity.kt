@@ -5,12 +5,46 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
 import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getDetails
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_home)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        val navView: BottomNavigationView = findViewById(R.id.bottomNavigation)
+        navView.setupWithNavController(navController)
+
+        val extras = intent?.extras
+        if (extras == null) {
+            navView.menu.findItem(R.id.homeItem).isVisible= true;
+            navView.menu.findItem(R.id.gameDetailsItem).isVisible = false;
+        } else {
+            navView.menu.findItem(R.id.gameDetailsItem).isVisible = true;
+            navView.menu.findItem(R.id.homeItem).isVisible= true;
+        }
+
+    }
+}
+
+        /*if(intent?.action == Intent.ACTION_SEND && intent?.type == "text/plain")
+        {
+            intent.getStringExtra(Intent.EXTRA_TEXT)?.let {
+                val bundle = bundleOf("search" to it)
+                navView.selectedItemId= R.id.searchFragment
+                navController.navigate(R.id.searchFragment,bundle)
+            }
+        }
+    }
+    {
     private lateinit var gameView : RecyclerView
     private lateinit var gameAdapter: VideoGameAdapter
     private var games = getAll()
@@ -46,4 +80,4 @@ class HomeActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
-}
+}*/

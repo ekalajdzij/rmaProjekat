@@ -8,37 +8,37 @@
     android:layout_height="match_parent">
 
 
-        <ImageView
-            android:id="@+id/logo_image"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/games"
-            app:layout_constraintEnd_toStartOf="@+id/home_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/games"
+        app:layout_constraintEnd_toStartOf="@+id/home_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/home_button"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/home"
-            app:layout_constraintEnd_toStartOf="@+id/details_button"
-            app:layout_constraintStart_toEndOf="@+id/logo_image"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/home"
+        app:layout_constraintEnd_toStartOf="@+id/details_button"
+        app:layout_constraintStart_toEndOf="@+id/logo_image"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <Button
-            android:id="@+id/details_button"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:enabled="false"
-            android:text="@string/details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/home_button"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/details_button"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:enabled="false"
+        android:text="@string/details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/home_button"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <LinearLayout

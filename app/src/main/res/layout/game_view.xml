@@ -33,7 +33,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/game_title_textview"
+                    android:id="@+id/item_title_textview"
                     android:layout_width="96dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

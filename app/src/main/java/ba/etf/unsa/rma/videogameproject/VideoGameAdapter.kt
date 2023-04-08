@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.text.FieldPosition
 
 class VideoGameAdapter (
     private var games: List<Game>,
@@ -34,7 +33,7 @@ class VideoGameAdapter (
 
 
     inner class GameViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val gameTitle : TextView = itemView.findViewById(R.id.game_title_textview)
+        val gameTitle : TextView = itemView.findViewById(R.id.item_title_textview)
         val gameRating: TextView = itemView.findViewById(R.id.game_rating_textview)
         val gameReleaseDate: TextView = itemView.findViewById(R.id.game_release_date_textview)
         val gamePlatform: TextView = itemView.findViewById(R.id.game_platform_textview)

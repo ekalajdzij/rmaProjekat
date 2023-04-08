@@ -34,7 +34,7 @@ class GameDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game_details_activity)
-        game_title = findViewById(R.id.game_title_textview)
+        game_title = findViewById(R.id.item_title_textview)
         platfrom = findViewById(R.id.platform_textview)
         rdate = findViewById(R.id.release_date_textview)
         esrb = findViewById(R.id.esrb_rating_textview)
@@ -77,8 +77,6 @@ class GameDetailsActivity : AppCompatActivity() {
         var id: Int = context.resources.getIdentifier(game.title.replace(" ","").lowercase(), "drawable", context.packageName)
         if (id == 0) id = context.resources.getIdentifier("games", "drawable", context.packageName)
         coverImageView.setImageResource(id)
-
-
 
 
     }
