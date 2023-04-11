@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/homeItem">
+
+    <fragment
+        android:id="@+id/homeItem"
+        android:name="ba.etf.unsa.rma.videogameproject.HomeFragment"
+        android:label="HomeFragment">
+        <argument
+            android:name="gameTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_home_to_gameDetails"
+            app:destination="@id/gameDetailsItem" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameDetailsItem"
+        android:name="ba.etf.unsa.rma.videogameproject.GameDetailsFragment"
+        android:label="GameDetailsFragment">
+        <argument
+            android:name="gameTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_gameDetails_to_home"
+            app:destination="@id/homeItem" />
+    </fragment>
+</navigation>

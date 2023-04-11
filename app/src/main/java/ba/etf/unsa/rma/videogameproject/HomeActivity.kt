@@ -20,17 +20,8 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        val navView: BottomNavigationView = findViewById(R.id.bottomNavigation)
+        val navView: BottomNavigationView = findViewById(R.id.bottom_nav)
         navView.setupWithNavController(navController)
-
-        val extras = intent?.extras
-        if (extras == null) {
-            navView.menu.findItem(R.id.homeItem).isVisible= true;
-            navView.menu.findItem(R.id.gameDetailsItem).isVisible = false;
-        } else {
-            navView.menu.findItem(R.id.gameDetailsItem).isVisible = true;
-            navView.menu.findItem(R.id.homeItem).isVisible= true;
-        }
 
     }
 }
