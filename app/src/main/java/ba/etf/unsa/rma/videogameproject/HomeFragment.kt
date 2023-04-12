@@ -52,11 +52,12 @@ class HomeFragment : Fragment() {
                 navigation.menu.getItem(0).isEnabled = false
                 navigation.menu.getItem(1).isEnabled = false
             }
-                //detailsNavItem.isVisible = false
+            navigation.menu.getItem(0).isEnabled = false
             detailsNavItem.setOnClickListener {
                 var game = getDetails(bundle!!.getString("title", ""))
                 showGameDetails(game!!)
             }
+            return view
         }
 
         return view
