@@ -68,11 +68,9 @@ class OwnEspressoTests {
     @Test
     fun test2(){
         onView(withId(R.id.game_list)).perform(click())
-        //onView(withId(R.id.home_button)).perform(click())
-        //onView(withId(R.id.bottomNavigation)).perform(NavigationViewActions.navigateTo(R.id.gameDetailsItem),click())
+        onView(withId(R.id.bottom_nav)).perform(NavigationViewActions.navigateTo(R.id.homeItem),click())
+        onView(withId(R.id.bottom_nav)).perform(NavigationViewActions.navigateTo(R.id.gameDetailsItem),click())
         Espresso.onView(ViewMatchers.withId(R.id.item_title_textview)).check(PositionAssertions.isCompletelyBelow(ViewMatchers.withId(R.id.logo_image)))
-        Espresso.onView(ViewMatchers.withId(R.id.item_title_textview)).check(PositionAssertions.isCompletelyBelow(ViewMatchers.withId(R.id.details_button)))
-        Espresso.onView(ViewMatchers.withId(R.id.item_title_textview)).check(PositionAssertions.isCompletelyBelow(ViewMatchers.withId(R.id.home_button)))
         Espresso.onView(ViewMatchers.withId(R.id.platform_textview)).check(PositionAssertions.isLeftAlignedWith(ViewMatchers.withId(R.id.release_date_textview)))
         Espresso.onView(ViewMatchers.withId(R.id.platform_textview)).check(PositionAssertions.isLeftAlignedWith(ViewMatchers.withId(R.id.release_date_textview)))
         Espresso.onView(ViewMatchers.withId(R.id.release_date_textview)).check(PositionAssertions.isLeftAlignedWith(ViewMatchers.withId(R.id.esrb_rating_textview)))

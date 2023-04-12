@@ -1,6 +1,7 @@
 package ba.etf.unsa.rma.videogameproject
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
@@ -26,7 +28,6 @@ class HomeFragment : Fragment() {
     private lateinit var gameView: RecyclerView
     private lateinit var gameAdapter: VideoGameAdapter
     private var games = getAll()
-    private lateinit var details: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,13 +44,15 @@ class HomeFragment : Fragment() {
         gameAdapter.updateGames(games)
 
         val bundle: Bundle? = arguments
-        var game: Game?//****//
-        val navigation: BottomNavigationView = requireActivity().findViewById(R.id.bottom_nav)
-        val detailsNavItem: BottomNavigationItemView = navigation.findViewById(R.id.gameDetailsItem)
-        if (bundle?.getString("title") == null) detailsNavItem.isVisible = false
-        detailsNavItem.setOnClickListener{
-            var game = getDetails(bundle!!.getString("title", ""))
-            showGameDetails(game!!)
+        if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            val navigation: BottomNavigationView = requireActivity().findViewById(R.id.bottom_nav)
+            val detailsNavItem: BottomNavigationItemView =
+                navigation.findViewById(R.id.gameDetailsItem)
+            if (bundle?.getString("title") == null) detailsNavItem.isVisible = false
+            detailsNavItem.setOnClickListener {
+                var game = getDetails(bundle!!.getString("title", ""))
+                showGameDetails(game!!)
+            }
         }
 
         return view
@@ -57,9 +60,17 @@ class HomeFragment : Fragment() {
 
     private fun showGameDetails(game: Game) {
         val bundle = bundleOf("title" to game.title)
-        requireView().findNavController().navigate(R.id.action_home_to_gameDetails, bundle)
 
+        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            val gameDetailsFragment = GameDetailsFragment()
+            gameDetailsFragment.arguments = bundle
 
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_right, gameDetailsFragment)
+                .commit()
+        } else {
+            requireView().findNavController().navigate(R.id.action_home_to_gameDetails, bundle)
+        }
     }
 }
 
