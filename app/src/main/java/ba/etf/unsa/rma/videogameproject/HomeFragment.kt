@@ -48,7 +48,11 @@ class HomeFragment : Fragment() {
             val navigation: BottomNavigationView = requireActivity().findViewById(R.id.bottom_nav)
             val detailsNavItem: BottomNavigationItemView =
                 navigation.findViewById(R.id.gameDetailsItem)
-            if (bundle?.getString("title") == null) detailsNavItem.isVisible = false
+            if (bundle?.getString("title") == null) {
+                navigation.menu.getItem(0).isEnabled = false
+                navigation.menu.getItem(1).isEnabled = false
+            }
+                //detailsNavItem.isVisible = false
             detailsNavItem.setOnClickListener {
                 var game = getDetails(bundle!!.getString("title", ""))
                 showGameDetails(game!!)

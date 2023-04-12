@@ -75,6 +75,8 @@ class GameDetailsFragment : Fragment() {
 
         if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
             val navigation: BottomNavigationView = requireActivity().findViewById(R.id.bottom_nav)
+            navigation.menu.getItem(0).isEnabled = true
+            navigation.menu.getItem(1).isEnabled = true
             val homeNavItem: BottomNavigationItemView = navigation.findViewById(R.id.homeItem)
             navigation.findViewById<BottomNavigationItemView>(R.id.gameDetailsItem).isVisible =
                 false
