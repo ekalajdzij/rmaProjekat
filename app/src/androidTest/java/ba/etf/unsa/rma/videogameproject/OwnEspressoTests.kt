@@ -2,11 +2,13 @@ package ba.etf.unsa.rma.videogameproject
 
 import android.app.IntentService
 import android.content.pm.ActivityInfo
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.NoMatchingViewException
 import androidx.test.espresso.ViewAssertion
@@ -14,19 +16,16 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.PositionAssertions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.contrib.NavigationViewActions
-import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.intent.Intents
-import androidx.test.espresso.intent.Intents.intended
-import androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent
+
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.rule.ActivityTestRule
-import com.google.android.material.internal.NavigationMenuItemView
 import junit.framework.TestCase.assertEquals
 import org.hamcrest.CoreMatchers
+import org.hamcrest.CoreMatchers.anything
 import org.hamcrest.CoreMatchers.not
+import org.hamcrest.Matchers
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
@@ -46,6 +45,7 @@ class OwnEspressoTests {
             )
         }
     }
+
 
     @get:Rule
     var homeRule: ActivityScenarioRule<HomeActivity> = ActivityScenarioRule(HomeActivity::class.java)
@@ -112,19 +112,22 @@ class OwnEspressoTests {
      */
 
     @Test
-    fun test3() {
-        /*ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+    fun testTitleInFragments() {
+        val activityScenario = ActivityScenario.launch(HomeActivity::class.java)
+        activityScenario.onActivity { activity ->
+            //activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+            val fragmentManager = activity.supportFragmentManager
+            val homeFragment = fragmentManager.findFragmentById(R.id.fragment_container_left) as HomeFragment
+            val gameDetailsFragment = fragmentManager.findFragmentById(R.id.fragment_container_right) as GameDetailsFragment
 
-        activityRule.activity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container_left, HomeFragment()).commit()
-        activityRule.activity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container_right, GameDetailsFragment()).commit()
+            val gameList = homeFragment.view?.findViewById<RecyclerView>(R.id.game_list)
+            val expectedTitle = gameList?.findViewById<TextView>(R.id.item_title_textview)?.text.toString()
+            val actualTitle = gameDetailsFragment.view?.findViewById<TextView>(R.id.item_title_textview)?.text.toString()
 
-        val leftFragment = activityRule.activity.supportFragmentManager.findFragmentById(R.id.fragment_container_left) as HomeFragment
-        val rightFragment = activityRule.activity.supportFragmentManager.findFragmentById(R.id.fragment_container_right) as GameDetailsFragment
+            assertEquals(expectedTitle, actualTitle)
+            Log.d("provjeeeeeeeeeeeeeeeeeeeeera", expectedTitle)
+            Log.d("provjeeeeeeeeeeeeeeeeeeeeera", actualTitle)
 
-        val leftTextView = leftFragment.view?.findViewById<TextView>(R.id.item_title_textview)
-        val rightTextView = rightFragment.view?.findViewById<TextView>(R.id.item_title_textview)
-        assertEquals(leftTextView?.text, rightTextView?.text)*/
-
-
+        }
     }
 }
