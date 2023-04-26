@@ -17,7 +17,9 @@ import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
@@ -81,8 +83,8 @@ class GameDetailsFragment : Fragment() {
             navigation.findViewById<BottomNavigationItemView>(R.id.gameDetailsItem).isVisible =
                 false
             homeNavItem.setOnClickListener {
-                val bundle = bundleOf("title" to game.title)
-                requireView().findNavController().navigate(R.id.action_gameDetails_to_home, bundle)
+                val bundle2 = bundleOf("title" to game.title)
+                requireView().findNavController().navigate(R.id.action_gameDetails_to_home, bundle2)
             }
         }
 

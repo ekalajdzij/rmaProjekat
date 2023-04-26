@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.os.bundleOf
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
@@ -38,7 +37,8 @@ class HomeFragment : Fragment() {
 
         gameView = view.findViewById(R.id.game_list)
 
-        gameView.layoutManager = LinearLayoutManager(container!!.context, LinearLayoutManager.VERTICAL, false)
+        gameView.layoutManager = LinearLayoutManager(container?.context, LinearLayoutManager.VERTICAL, false)
+        gameView.layoutManager = LinearLayoutManager(container?.context, LinearLayoutManager.VERTICAL, false)
         gameAdapter = VideoGameAdapter(games) { game -> showGameDetails(game) }
         gameView.adapter = gameAdapter
         gameAdapter.updateGames(games)
@@ -67,11 +67,15 @@ class HomeFragment : Fragment() {
         val bundle = bundleOf("title" to game.title)
 
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            val homeFragment = HomeFragment()   /////
             val gameDetailsFragment = GameDetailsFragment()
             gameDetailsFragment.arguments = bundle
 
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container_right, gameDetailsFragment)
+                .commit()
+            requireActivity().supportFragmentManager.beginTransaction()/////////
+                .replace(R.id.fragment_container_left, homeFragment)
                 .commit()
         } else {
             requireView().findNavController().navigate(R.id.action_home_to_gameDetails, bundle)

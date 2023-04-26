@@ -17,10 +17,16 @@ import androidx.test.espresso.assertion.PositionAssertions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 
+import androidx.test.espresso.matcher.ViewMatchers.assertThat
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+
+
+
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import androidx.test.platform.app.InstrumentationRegistry
 import junit.framework.TestCase.assertEquals
 import org.hamcrest.CoreMatchers
 import org.hamcrest.CoreMatchers.anything
@@ -31,19 +37,17 @@ import org.junit.Rule
 import org.junit.Test
 
 class OwnEspressoTests {
-    fun hasItemCount(n: Int) = object : ViewAssertion {
-        override fun check(view: View?, noViewFoundException: NoMatchingViewException?) {
-            if (noViewFoundException != null) {
-                throw noViewFoundException
-            }
-            Assert.assertTrue("View nije tipa RecyclerView", view is RecyclerView)
-            var rv: RecyclerView = view as RecyclerView
-            ViewMatchers.assertThat(
-                "GetItemCount RecyclerView broj elementa: ",
-                rv.adapter?.itemCount,
-                CoreMatchers.`is`(n)
-            )
+    fun hasItemCount(n: Int) = ViewAssertion { view, noViewFoundException ->
+        if (noViewFoundException != null) {
+            throw noViewFoundException
         }
+        Assert.assertTrue("View nije tipa RecyclerView", view is RecyclerView)
+        var rv: RecyclerView = view as RecyclerView
+        ViewMatchers.assertThat(
+            "GetItemCount RecyclerView broj elementa: ",
+            rv.adapter?.itemCount,
+            CoreMatchers.`is`(n)
+        )
     }
 
 
@@ -115,8 +119,10 @@ class OwnEspressoTests {
     fun testTitleInFragments() {
         val activityScenario = ActivityScenario.launch(HomeActivity::class.java)
         activityScenario.onActivity { activity ->
-            //activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+
             val fragmentManager = activity.supportFragmentManager
+
             val homeFragment = fragmentManager.findFragmentById(R.id.fragment_container_left) as HomeFragment
             val gameDetailsFragment = fragmentManager.findFragmentById(R.id.fragment_container_right) as GameDetailsFragment
 

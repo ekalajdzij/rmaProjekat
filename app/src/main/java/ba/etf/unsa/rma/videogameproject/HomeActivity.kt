@@ -22,12 +22,16 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
         val config: Configuration = baseContext.resources.configuration
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container_left, HomeFragment()).commit()
+            /*super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_home)*/
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container_right, GameDetailsFragment()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container_left, HomeFragment()).commit()
+            //supportFragmentManager.beginTransaction().replace(R.id.fragment_container_right, GameDetailsFragment()).commit()
         } else {
+            /*super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_home)*/
             val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
             val navController = navHostFragment.navController
             val navView: BottomNavigationView = findViewById(R.id.bottom_nav)
