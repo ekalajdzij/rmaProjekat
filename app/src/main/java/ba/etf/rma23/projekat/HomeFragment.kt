@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ba.etf.rma23.projekat.GameData.VideoGames.getAll
 import ba.etf.rma23.projekat.GameData.VideoGames.getDetails
 import ba.etf.unsa.rma23.projekat.R
-import ba.etf.rma23.projekat.repositories.GamesRepository.getGamesByName
+import ba.etf.rma23.projekat.data.repositories.GamesRepository.getGamesByName
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch

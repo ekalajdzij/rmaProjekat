@@ -1,6 +1,6 @@
 package ba.etf.rma23.projekat
 
-import ba.etf.rma23.projekat.repositories.AccountGamesRepository.getHash
+import ba.etf.rma23.projekat.data.repositories.AccountGamesRepository.getHash
 import retrofit2.Response
 import retrofit2.http.*
 

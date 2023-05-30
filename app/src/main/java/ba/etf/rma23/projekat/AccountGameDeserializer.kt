@@ -1,6 +1,6 @@
 package ba.etf.rma23.projekat
 
-import ba.etf.rma23.projekat.repositories.GamesRepository
+import ba.etf.rma23.projekat.data.repositories.GamesRepository
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement

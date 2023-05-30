@@ -1,7 +1,7 @@
-package ba.etf.rma23.projekat.repositories
+package ba.etf.rma23.projekat.data.repositories
 
 import ba.etf.rma23.projekat.Game
-import ba.etf.rma23.projekat.repositories.IGDBApiConfig.retrofit
+import ba.etf.rma23.projekat.data.repositories.IGDBApiConfig.retrofit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.RequestBody.Companion.toRequestBody

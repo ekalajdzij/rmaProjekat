@@ -1,4 +1,4 @@
-package ba.etf.unsa.rma23.projekat
+package ba.etf.rma23.projekat
 
 import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
@@ -15,7 +15,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.*
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import ba.etf.rma23.projekat.HomeActivity
+import ba.etf.unsa.rma23.projekat.R
 import org.hamcrest.*
 import org.hamcrest.CoreMatchers.not
 import org.junit.Rule
@@ -69,8 +69,12 @@ class OwnEspressoTests {
         onView(withId(R.id.item_title_textview)).check(PositionAssertions.isCompletelyBelow(withId(R.id.logo_image)))
         onView(withId(R.id.platform_textview)).check(PositionAssertions.isLeftAlignedWith(withId(R.id.release_date_textview)))
         onView(withId(R.id.platform_textview)).check(PositionAssertions.isLeftAlignedWith(withId(R.id.release_date_textview)))
-        onView(withId(R.id.release_date_textview)).check(PositionAssertions.isLeftAlignedWith(withId(R.id.esrb_rating_textview)))
-        onView(withId(R.id.esrb_rating_textview)).check(PositionAssertions.isRightAlignedWith(withId(R.id.developer_textview)))
+        onView(withId(R.id.release_date_textview)).check(PositionAssertions.isLeftAlignedWith(withId(
+            R.id.esrb_rating_textview
+        )))
+        onView(withId(R.id.esrb_rating_textview)).check(PositionAssertions.isRightAlignedWith(withId(
+            R.id.developer_textview
+        )))
         onView(withId(R.id.developer_textview)).check(PositionAssertions.isRightAlignedWith(withId(R.id.publisher_textview)))
         onView(withId(R.id.publisher_textview)).check(PositionAssertions.isRightAlignedWith(withId(R.id.genre_textview)))
         onView(withId(R.id.genre_textview)).check(PositionAssertions.isRightAlignedWith(withId(R.id.description_textview)))

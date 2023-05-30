@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import ba.etf.rma23.projekat.repositories.AccountGamesRepository
+import ba.etf.rma23.projekat.data.repositories.AccountGamesRepository
 import ba.etf.unsa.rma23.projekat.R
-import ba.etf.rma23.projekat.repositories.GamesRepository
+import ba.etf.rma23.projekat.data.repositories.GamesRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.*
 
@@ -17,6 +17,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val config: Configuration = baseContext.resources.configuration
+        CoroutineScope(Job() + Dispatchers.Main).launch {
+            val games = GamesRepository.getGamesByName("Storybook Workshop")
+            val game = games[0]
+            print(game)
+        }
+
        CoroutineScope(Job() + Dispatchers.Main).launch {
             val account = AccountGamesRepository
             account.setAge(18)

@@ -43,7 +43,11 @@ class GameDeserializer :JsonDeserializer<Game>{
         if(ratingArray != null && ratingArray.size()>0) {
             for(i in 0 until ratingArray.size()) {
                 val objectArray = ratingArray[i].asJsonObject.get("category")?.asInt ?:0
-                if(objectArray == 1) {
+                if(objectArray == 2) {
+                    val esrbJson = ratingArray[i].asJsonObject.get("rating")?.asInt ?:0
+                    esrb = getGameRatingString(esrbJson)
+                }
+                else if(objectArray == 1) {
                     val esrbJson = ratingArray[i].asJsonObject.get("rating")?.asInt ?:0
                     esrb = getGameRatingString(esrbJson)
                 }
