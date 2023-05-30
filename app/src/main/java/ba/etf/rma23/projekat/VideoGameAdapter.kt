@@ -1,14 +1,15 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.rma23.projekat
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import ba.etf.unsa.rma23.projekat.R
 
 class VideoGameAdapter (
     private var games: List<Game>,
-    private val onItemClicked: (game:Game) -> Unit
+    private val onItemClicked: (game: Game) -> Unit
 ): RecyclerView.Adapter<VideoGameAdapter.GameViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameViewHolder {
@@ -19,11 +20,13 @@ class VideoGameAdapter (
 
     override fun getItemCount(): Int = games.size
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
-        holder.gameTitle.text = games[position].title
-        holder.gamePlatform.text = games[position].platform
-        holder.gameRating.text = games[position].rating.toString()
-        holder.gameReleaseDate.text = games[position].releaseDate
 
+        holder.gameTitle.text = games[position].title
+        holder.gamePlatform.text =
+            games[position].platform                            //izmjene dodano.toString()
+        holder.gameRating.text = games[position].rating.toString()
+        holder.gameReleaseDate.text =
+            games[position].releaseDate.toString()                      //izmjene dodano.toString()
         holder.itemView.setOnClickListener{onItemClicked(games[position])}
     }
     fun updateGames(games: List<Game>) {

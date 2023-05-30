@@ -1,4 +1,4 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.rma23.projekat
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
-import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getDetails
+import ba.etf.rma23.projekat.GameData.VideoGames.getAll
+import ba.etf.rma23.projekat.GameData.VideoGames.getDetails
+import ba.etf.unsa.rma23.projekat.R
 
 class GameDetailsActivity : AppCompatActivity() {
     private lateinit var game : Game

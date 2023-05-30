@@ -1,21 +1,11 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.rma23.projekat
 
-import android.content.Context
-import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
-import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getDetails
+import ba.etf.unsa.rma23.projekat.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {

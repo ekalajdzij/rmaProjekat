@@ -1,10 +1,10 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.rma23.projekat
 
 class GameData {
     companion object VideoGames {
         fun getAll() :List<Game> {
             return listOf(
-                Game(
+                Game(1,
                     "FIFA 23",
                     "PlayStation/PC/Nintendo Switch/Xbox",
                     "27.09.2022",
@@ -15,7 +15,8 @@ class GameData {
                     "EA",
                     "Sports",
                     "FIFA 23 features both men's and women's World Cup game modes, replicating the 2022 FIFA World Cup and the 2023 FIFA Women's World Cup.",
-                    mutableListOf(UserReview("alexisManFromColombia", 4, "A game that is only satisfying when playing kick-off mode with friends or playing ProClubs, career mode gets worse every year, it's really getting painful to play that mode-"),
+                    mutableListOf(
+                        UserReview("alexisManFromColombia", 4, "A game that is only satisfying when playing kick-off mode with friends or playing ProClubs, career mode gets worse every year, it's really getting painful to play that mode-"),
                         UserReview("megaJohnFromCincinatti", 1617373200000, "Pro Clubs is a hot mess once again. Your player will feel completely different from one match to the next, unlike any other previous year. The RB+LB “power shot” might be the most useless addition to the game since Volta."),
                         UserRating("xboxIsBetterThanPS", 1640995200000, 2.5),
                         UserReview("beBraveForaLifetime",1704182399000,"It’s fun for the first 20-30 hours or on a lower difficulty but once you kick the difficulty up you get to experience how terrible this game really is. Defending is a joke, the way the ball will magically bounce to the ai after a tackle, the wonder tackles that the ai back line put in and the ai blocking is absolutely insane."),
@@ -24,19 +25,21 @@ class GameData {
                         UserReview("gamer4life", 1647448800000, "Average game at best. Focus is shifted across from career mode to ultimate team and adding women's teams. World cup mode was nice, but should have had a better ultimate team mode."),
                         UserReview("johnTheGreatest345", 1640995200000, "Just as usual, garbage. Every single year you guys managed to make the game worse, and worse, and worse, and worse, and worse. None of the logistics of the game makes sense. I can play 1 game against an all prime icon team and win like it was the little league team then the next game I play an all silver team and get my arse absolutely wiped. No sense whatsoever. How do I manage to get TOTY Courtois for him to play worse than a bronze goalkeeper?")
                     )),
-                Game(
+                Game(2,
                     "Minecraft", "PlayStation/PC/Nintendo Switch/Xbox", "18.11.2011", 4.9,
                     "", "E10+", "Mojang Studios", "Mojang Studios", "Sandbox",
                     "In Minecraft, players explore a blocky, procedurally generated, three-dimensional world with virtually infinite terrain and may discover and extract raw materials, craft tools and items, and build structures, earthworks, and machines.",
-                    mutableListOf(UserReview("akidWhoLovesGames", 1704182399000, "Kids can learn creative thinking, geometry, and even a little geology as they build imaginative block structures in this refreshingly open-ended mining and construction game. Given carte blanche to sculpt virtually any creation of their choice in this 3-D space, kids can try out tons of possibilities while working toward simple objectives. "),
+                    mutableListOf(
+                        UserReview("akidWhoLovesGames", 1704182399000, "Kids can learn creative thinking, geometry, and even a little geology as they build imaginative block structures in this refreshingly open-ended mining and construction game. Given carte blanche to sculpt virtually any creation of their choice in this 3-D space, kids can try out tons of possibilities while working toward simple objectives. "),
                         UserRating("WindyCityyyyyyy", 1654096200000, 5.0),
                         UserRating("sotox",1660684800000,4.5),
                         UserReview("aConcernedFather", 1526402400000, "Minecraft is an excellent game for young children to help encourage their creativity and problem solving. It’s also an excellent way to bond with kids, I play it all the time with my son. One thing parents need to be aware of though is the online features and micro transactions. "),
                         UserRating("zoxxx921", 1654096200000, 5.0),
                         UserReview("jimJimsonJimmmmmyYeah", 1654096200000, "I love creating in Minecraft, but my gratification is due, at least partially, to the fact that I have to earn everything. Survival Mode generates a random world with nothing to your name, forced to gather resources in order to construct food, shelter and tools. By the time I crafted and installed a wooden door in my first mud hut I felt a sense of ownership.Minecraft, more than any other game I know, isn’t about playing it a specific way; it’s an open-world, a blank page just daring you to jump in and do with it what you will. The question, then, isn’t what you need to do to succeed, what’s needed to win, but what are you willing to do to make your dreams come to life?"),
-                        UserRating("sofieFromTheChicago", 1514764800000, 4.1))
+                        UserRating("sofieFromTheChicago", 1514764800000, 4.1)
+                    )
                 ),
-                Game(
+                Game(3,
                     "World of Warcraft",
                     "PC",
                     "23.11.2004",
@@ -49,7 +52,7 @@ class GameData {
                     "Set in the fictional world of Azeroth, WoW allows players to create avatar-style characters and explore a sprawling universe while interacting with nonreal players—called nonplayer characters (NPCs)—and other real-world players (PCs)",
                     mutableListOf()
                 ),
-                Game(
+                Game(4,
                     "Fortnite",
                     "PlayStation/PC/Nintendo Switch/Xbox",
                     "21.07.2017",
@@ -62,7 +65,7 @@ class GameData {
                     "In Fortnite, players collaborate to survive in an open-world environment, by battling other characters who are controlled either by the game itself, or by other players.",
                     mutableListOf()
                 ),
-                Game(
+                Game(5,
                     "F1 22",
                     "PlayStation/PC/Xbox",
                     "28.06.2022",
@@ -75,7 +78,7 @@ class GameData {
                     "F1 22 is a racing video game that simulates the official Formula 1 championship. It is the official game of the Formula 1",
                     mutableListOf()
                 ),
-                Game(
+                Game(6,
                     "GTA V",
                     "PlayStation/PC/Xbox",
                     "17.09.2013",
@@ -88,7 +91,7 @@ class GameData {
                     "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions—linear scenarios with set objectives—to progress through the story. Outside of the missions, players may freely roam the open world.",
                     mutableListOf()
                 ),
-                Game(
+                Game(7,
                     "COD Cold War",
                     "PlayStation/PC/Xbox",
                     "13.11.2020",
@@ -101,7 +104,7 @@ class GameData {
                     "Call of Duty: Black Ops Cold War is set during the Cold War in the early 1980s. The campaign follows Green Beret turned CIA SAD/SOG officer Russell Adler (Bruce Thomas) and his mission to stop an international espionage threat named Perseus (William Salyers) in 1981.",
                     mutableListOf()
                 ),
-                Game(
+                Game(8,
                     "Hitman 3",
                     "PlayStation/PC/Xbox",
                     "20.01.2021",
@@ -114,7 +117,7 @@ class GameData {
                     "Hitman 3 is a stealth game played from a third-person perspective and players once again assume control of assassin Agent 47.",
                     mutableListOf()
                 ),
-                Game(
+                Game(9,
                     "League of Legends",
                     "PC",
                     "27.10.2009",
@@ -127,7 +130,7 @@ class GameData {
                     "League of Legends is one of the world's most popular video games, developed by Riot Games. It features a team-based competitive game mode based on strategy and outplaying opponents. Players work with their team to break the enemy Nexus before the enemy team breaks theirs.",
                     mutableListOf()
                 ),
-                Game(
+                Game(10,
                     "NBA 2K23",
                     "PlayStation/PC/Xbox",
                     "08.09.2022",

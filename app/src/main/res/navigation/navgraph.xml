@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeItem"
-        android:name="ba.etf.unsa.rma.videogameproject.HomeFragment"
+        android:name="ba.etf.rma23.projekat.HomeFragment"
         android:label="HomeFragment">
         <argument
             android:name="gameTitle"
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/gameDetailsItem"
-        android:name="ba.etf.unsa.rma.videogameproject.GameDetailsFragment"
+        android:name="ba.etf.rma23.projekat.GameDetailsFragment"
         android:label="GameDetailsFragment">
         <argument
             android:name="gameTitle"

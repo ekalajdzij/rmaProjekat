@@ -1,4 +1,4 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.unsa.rma23.projekat
 
 import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
@@ -10,13 +10,12 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.PositionAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-
 
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.espresso.*
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import ba.etf.rma23.projekat.HomeActivity
 import org.hamcrest.*
 import org.hamcrest.CoreMatchers.not
 import org.junit.Rule

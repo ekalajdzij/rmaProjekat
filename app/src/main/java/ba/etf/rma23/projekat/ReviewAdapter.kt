@@ -1,4 +1,4 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.rma23.projekat
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
+import ba.etf.unsa.rma23.projekat.R
 
 class ReviewAdapter(private var impressions: List<UserImpression>
 ):RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {

@@ -1,33 +1,24 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.rma23.projekat
 
-import android.annotation.SuppressLint
-import android.content.ClipData.Item
 import android.content.Context
-import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getAll
-import ba.etf.unsa.rma.videogameproject.GameData.VideoGames.getDetails
+import ba.etf.rma23.projekat.GameData.VideoGames.getAll
+import ba.etf.rma23.projekat.GameData.VideoGames.getDetails
+import ba.etf.unsa.rma23.projekat.R
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.internal.NavigationMenuItemView
-import com.google.android.material.navigation.NavigationView
 
 class GameDetailsFragment : Fragment() {
     private lateinit var game: Game

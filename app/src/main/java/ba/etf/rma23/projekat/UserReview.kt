@@ -1,8 +1,7 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.rma23.projekat
 
-data class UserRating(
+data class UserReview(
     override val userName: String,
     override val timestamp: Long,
-    val rating: Double
+    val review: String
 ): UserImpression()
-

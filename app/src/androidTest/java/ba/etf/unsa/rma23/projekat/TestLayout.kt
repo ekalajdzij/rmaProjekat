@@ -1,4 +1,4 @@
-package ba.etf.unsa.rma.videogameproject
+package ba.etf.unsa.rma23.projekat
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +13,8 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import ba.etf.rma23.projekat.GameData
+import ba.etf.rma23.projekat.HomeActivity
 import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.CoreMatchers.instanceOf
 import org.hamcrest.CoreMatchers.`is` as Is
