@@ -11,7 +11,6 @@
         android:id="@+id/logo_image"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginStart="152dp"
         android:layout_marginTop="4dp"
         android:src="@drawable/games"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,10 +53,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_layout"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/search_layout">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/sortBuutton"
+        android:layout_width="114dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="6dp"
+        android:text="Sort"
+        app:layout_constraintBottom_toTopOf="@+id/search_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

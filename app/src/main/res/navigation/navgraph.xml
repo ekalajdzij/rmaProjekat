@@ -17,6 +17,18 @@
     </fragment>
 
     <fragment
+        android:id="@+id/favoriteGamesItem"
+        android:name="ba.etf.rma23.projekat.FavoriteGamesFragment"
+        android:label="FavoriteGamesFragment">
+        <argument
+            android:name="gameTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_home_to_gameDetails"
+            app:destination="@+id/gameDetailsItem" />
+    </fragment>
+
+    <fragment
         android:id="@+id/gameDetailsItem"
         android:name="ba.etf.rma23.projekat.GameDetailsFragment"
         android:label="GameDetailsFragment">

@@ -17,13 +17,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val config: Configuration = baseContext.resources.configuration
-        AccountGamesRepository.setHash("ca0ee672-440b-45b2-8a12-75b80f4fbdd3")
-        CoroutineScope(Job() + Dispatchers.Main).launch {
-            AccountGamesRepository.saveGame(Game(24273,"Age of Empires: The Age of Kings","","",10.0,"","","","","","",listOf<UserImpression>()))
-            GamesRepository.getGamesByName("Age of Empires")
-            var res = GamesRepository.sortGames()
-            print(res[0].id)
-        }
+        //AccountGamesRepository.setHash("ca0ee672-440b-45b2-8a12-75b80f4fbdd3")
+       /* CoroutineScope(Job() + Dispatchers.Main).launch {
+            val games = GamesRepository.displayedGameList
+            print(games.size)
+        }*/
 
       /* CoroutineScope(Job() + Dispatchers.Main).launch {
             val account = AccountGamesRepository

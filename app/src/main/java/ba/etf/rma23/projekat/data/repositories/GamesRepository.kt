@@ -28,6 +28,19 @@ object GamesRepository {
         }
 
     }
+
+    suspend fun getGames(): List<Game> = withContext(Dispatchers.IO) {
+        try {
+            val response = retrofit.getGames()
+            this@GamesRepository.displayedGameList = response.body()!!
+            return@withContext response.body()!!
+        } catch (e: Exception) {
+            print(e.message)
+            return@withContext emptyList()
+        }
+
+
+    }
     suspend fun getGameById(id: Int): List<Game> = withContext(Dispatchers.IO) {
         try {
             val stringId = id.toString()

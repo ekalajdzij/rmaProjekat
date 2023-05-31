@@ -4,10 +4,13 @@
         android:id="@id/homeItem"
         android:icon="@android:drawable/btn_star_big_off"
         android:title="Home" />
-
     <item
         android:id="@id/gameDetailsItem"
         android:icon="@android:drawable/ic_popup_reminder"
         android:title="Game details" />
+    <item
+        android:id="@+id/favoriteGamesItem"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Favorite games" />
 
 </menu>
