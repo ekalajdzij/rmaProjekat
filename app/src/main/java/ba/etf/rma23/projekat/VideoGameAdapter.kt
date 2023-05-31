@@ -23,10 +23,10 @@ class VideoGameAdapter (
 
         holder.gameTitle.text = games[position].title
         holder.gamePlatform.text =
-            games[position].platform                            //izmjene dodano.toString()
+            games[position].platform
         holder.gameRating.text = games[position].rating.toString()
         holder.gameReleaseDate.text =
-            games[position].releaseDate.toString()                      //izmjene dodano.toString()
+            games[position].releaseDate.toString()
         holder.itemView.setOnClickListener{onItemClicked(games[position])}
     }
     fun updateGames(games: List<Game>) {

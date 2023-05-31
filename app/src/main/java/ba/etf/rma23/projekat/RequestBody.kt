@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class RequestBody (
 @SerializedName("igdb_id") val Gid: Int,
-@SerializedName("name")     val Gtitle: String
+@SerializedName("name")    val Gtitle: String
 )

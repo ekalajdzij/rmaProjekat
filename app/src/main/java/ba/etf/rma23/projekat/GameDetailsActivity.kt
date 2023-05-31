@@ -24,9 +24,6 @@ class GameDetailsActivity : AppCompatActivity() {
     private lateinit var publisher: TextView
     private lateinit var genre: TextView
     private lateinit var description: TextView
-
-    private var games = getAll()
-
     private lateinit var ratings : RecyclerView
     private lateinit var ratingAdapter: ReviewAdapter
     private lateinit var home : Button
@@ -78,7 +75,6 @@ class GameDetailsActivity : AppCompatActivity() {
         var id: Int = context.resources.getIdentifier(game.title.replace(" ","").lowercase(), "drawable", context.packageName)
         if (id == 0) id = context.resources.getIdentifier("games", "drawable", context.packageName)
         coverImageView.setImageResource(id)
-
 
     }
 }

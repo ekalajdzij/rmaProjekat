@@ -86,7 +86,6 @@ class GameDetailsFragment : Fragment() {
                 }
         }
 
-
         if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
             val navigation: BottomNavigationView = requireActivity().findViewById(R.id.bottom_nav)
             navigation.menu.getItem(0).isEnabled = true
@@ -129,14 +128,10 @@ class GameDetailsFragment : Fragment() {
         description.text = game.description
         genre.text = game.genre
 
-
-
         val id = requireContext().resources.getIdentifier("error", "drawable", coverImageView.context.packageName)
         Glide.with(coverImageView.context).
         load("https://"+game.coverImage).
         placeholder(R.drawable.placeholder).error(id).fallback(id).into(coverImageView)
 
-
     }
-
 }
