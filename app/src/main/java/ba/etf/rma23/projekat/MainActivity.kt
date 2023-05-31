@@ -17,13 +17,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val config: Configuration = baseContext.resources.configuration
+        AccountGamesRepository.setHash("ca0ee672-440b-45b2-8a12-75b80f4fbdd3")
         CoroutineScope(Job() + Dispatchers.Main).launch {
-            val games = GamesRepository.getGamesByName("Storybook Workshop")
-            val game = games[0]
-            print(game)
+            AccountGamesRepository.saveGame(Game(24273,"Age of Empires: The Age of Kings","","",10.0,"","","","","","",listOf<UserImpression>()))
+            GamesRepository.getGamesByName("Age of Empires")
+            var res = GamesRepository.sortGames()
+            print(res[0].id)
         }
 
-       CoroutineScope(Job() + Dispatchers.Main).launch {
+      /* CoroutineScope(Job() + Dispatchers.Main).launch {
             val account = AccountGamesRepository
             account.setAge(18)
             val response = GamesRepository.getGamesSafe("Thief: Deadly Shadows")
@@ -70,6 +72,8 @@ class MainActivity : AppCompatActivity() {
             print(response)
 
         }
+
+         */
 
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             /*super.onCreate(savedInstanceState)

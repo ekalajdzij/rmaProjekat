@@ -83,7 +83,6 @@ class RepositoriesUnitTest {
     //ako vam ovaj test nekada pada, a nekada prolazi vjerovatno je ista greÅ¡ka kao u a2
     @Test
     fun a6_obrisiIgre() = runBlocking {
-        //AccountGamesRepository.setHash("ca0ee672-440b-45b2-8a12-75b80f4fbdd3")
         var res=AccountGamesRepository.getSavedGames()
         assertThat(res.size,CoreMatchers.equalTo(2))
         AccountGamesRepository.removeGame(res.get(0).id)
@@ -94,11 +93,11 @@ class RepositoriesUnitTest {
         assertThat(res.size,CoreMatchers.equalTo(0))
     }
 
-    /*@Test
+    @Test
     fun a7_dodajIgruUOmiljeneISortiraj() = runBlocking {
         AccountGamesRepository.saveGame(Game(24273,"Age of Empires: The Age of Kings","","",10.0,"","","","","","",listOf<UserImpression>()))
         GamesRepository.getGamesByName("Age of Empires")
         var res = GamesRepository.sortGames()
         assertThat(res.get(0).id,CoreMatchers.equalTo(24273))
-    }*/
+    }
 }
