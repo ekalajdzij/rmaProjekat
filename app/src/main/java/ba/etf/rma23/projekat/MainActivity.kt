@@ -14,6 +14,7 @@ import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val config: Configuration = baseContext.resources.configuration
@@ -27,4 +28,5 @@ class MainActivity : AppCompatActivity() {
             navView.setupWithNavController(navController)
         }
     }
+
 }

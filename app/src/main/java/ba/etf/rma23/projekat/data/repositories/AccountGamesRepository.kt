@@ -92,6 +92,7 @@ object AccountGamesRepository {
         var esrb = ""
         var esrbValue: EsrbRating
         var value = 0
+        var ratingString: String
 
         try {
             runBlocking {
@@ -103,10 +104,13 @@ object AccountGamesRepository {
                     if (game.esrbRating != "No ESRB rating") {
                         esrb = game.esrbRating!!
                         esrbValue = getEsrbRatingByString(esrb)!!
-                        value = esrbValue.value
-                        if (value > age) {
-                            runBlocking {
-                                removeGame(game.id)
+                        ratingString = esrbValue.name
+                        value = realAge(ratingString)
+                        if (value != -1) {
+                            if (value > age) {
+                                runBlocking {
+                                    removeGame(game.id)
+                                }
                             }
                         }
                     }
@@ -130,5 +134,20 @@ object AccountGamesRepository {
         return EsrbRating.values().find { it.name == esrb }
     }
 
+    fun realAge(value: String): Int {
+        if (value == "Three") return 3
+        if (value == "Seven") return 7
+        if (value == "Twelve") return 12
+        if (value == "Sixteen") return 16
+        if (value == "Eighteen") return 18
+        if (value == "RP") return 18
+        if (value == "EC") return 3
+        if (value == "E") return 0
+        if (value == "E10") return 10
+        if (value == "T") return 13
+        if (value == "M") return 17
+        if (value == "AO") return 18
+        return -1
+    }
 
 }

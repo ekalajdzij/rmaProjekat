@@ -24,7 +24,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
+import okhttp3.Dispatcher
 
 class GameDetailsFragment : Fragment() {
     private lateinit var game: Game
@@ -40,6 +41,7 @@ class GameDetailsFragment : Fragment() {
     private lateinit var ratings: RecyclerView
     private lateinit var ratingAdapter: ReviewAdapter
     private lateinit var favoriteButton : Button
+    private lateinit var removeButton : Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,6 +60,7 @@ class GameDetailsFragment : Fragment() {
         genre = view.findViewById(R.id.genre_textview)
         ratings = view.findViewById(R.id.review_list)
         favoriteButton = view.findViewById(R.id.favoriteButton)
+        removeButton = view.findViewById(R.id.remove)
 
         val bundle:Bundle? = arguments
         if (bundle != null) {
@@ -110,6 +113,11 @@ class GameDetailsFragment : Fragment() {
                     runBlocking {
                         AccountGamesRepository.saveGame(game)
                     }
+                }
+            }
+            removeButton.setOnClickListener {
+                CoroutineScope(Dispatchers.IO).launch {
+                    AccountGamesRepository.removeGame(game.id)
                 }
             }
         }
