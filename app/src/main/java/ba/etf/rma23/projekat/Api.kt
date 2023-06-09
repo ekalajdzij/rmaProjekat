@@ -7,8 +7,8 @@ import retrofit2.http.*
 interface Api {
 
     @Headers(
-        "Client-ID: ${BuildConfig.clientID}",
-        "Authorization: ${BuildConfig.authorizationKey}",
+        "Client-ID: sve62xu5towl9vv4d03ys76h8xnuk0",
+        "Authorization: Bearer ot9mgrlkexg317q8c2ga6f9gma4qvy",
         "Content-Type: application/json"
     )
     @GET("games")
@@ -18,8 +18,8 @@ interface Api {
     ): Response<List<Game>>
 
     @Headers(
-        "Client-ID: ${BuildConfig.clientID}",
-        "Authorization: ${BuildConfig.authorizationKey}",
+        "Client-ID: sve62xu5towl9vv4d03ys76h8xnuk0",
+        "Authorization: Bearer ot9mgrlkexg317q8c2ga6f9gma4qvy",
         "Content-Type: application/json"
     )
     @GET("games")
@@ -28,8 +28,8 @@ interface Api {
     ): Response<List<Game>>
 
     @Headers(
-        "Client-ID: ${BuildConfig.clientID}",
-        "Authorization: ${BuildConfig.authorizationKey}",
+        "Client-ID: sve62xu5towl9vv4d03ys76h8xnuk0",
+        "Authorization: Bearer ot9mgrlkexg317q8c2ga6f9gma4qvy",
         "Content-Type: application/json"
     )
     @POST("games")
@@ -38,8 +38,8 @@ interface Api {
     ): Response<List<Game>>
 
     @Headers(
-        "Client-ID: ${BuildConfig.clientID}",
-        "Authorization: ${BuildConfig.authorizationKey}",
+        "Client-ID: sve62xu5towl9vv4d03ys76h8xnuk0",
+        "Authorization: Bearer ot9mgrlkexg317q8c2ga6f9gma4qvy",
         "Content-Type: application/json"
     )
     @POST("games")

@@ -20,10 +20,7 @@ android {
     }
 
     buildTypes {
-        debug{
-            buildConfigField 'String', "clientID", clientID
-            buildConfigField 'String', "authorizationKey", authorizationKey
-        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
