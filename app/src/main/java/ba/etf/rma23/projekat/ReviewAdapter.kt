@@ -7,9 +7,10 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import ba.etf.rma23.projekat.data.repositories.GameReview
 import ba.etf.unsa.rma23.projekat.R
 
-class ReviewAdapter(private var impressions: List<UserImpression>
+class ReviewAdapter(private var impressions: List<GameReview>
 ):RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
 
 
@@ -22,21 +23,21 @@ class ReviewAdapter(private var impressions: List<UserImpression>
     override fun getItemCount(): Int = impressions.size
 
     override fun onBindViewHolder(holder: ReviewViewHolder, position: Int) {
-            if (impressions[position] is UserReview) {
-                val comments = impressions[position] as UserReview
-                holder.review.text = comments.review
+            if (impressions[position].review != null) {
+                val comments = impressions[position].review
+                holder.review.text = comments
                 holder.username.text = impressions[position].userName
-                holder.ratingBar.isVisible = false
+                //holder.ratingBar.isVisible = false
             }
-            if (impressions[position] is UserRating) {
-                val number = impressions[position] as UserRating
-                holder.ratingBar.rating = number.rating.toFloat()
+            if (impressions[position].rating != null) {
+                val number = impressions[position].rating
+                holder.ratingBar.rating = number!!.toFloat()
                 holder.username.text = impressions[position].userName
-                holder.review.isVisible = false
+                //holder.review.isVisible = false
             }
     }
 
-    fun updateReviews(impressions: List<UserImpression>) {
+    fun updateReviews(impressions: List<GameReview>) {
         this.impressions  = impressions
         notifyDataSetChanged()
     }

@@ -14,12 +14,18 @@ class ApiReviewDeserializer : JsonDeserializer<GameReview> {
         context: JsonDeserializationContext?
     ): GameReview {
         val jsonObject = json?.asJsonObject ?: JsonObject()
-        val id = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("id")?.asInt ?: 0
-        val rating = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("rating")?.asInt ?: 0
-        val review = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("review")?.asString ?: "No review"
+        var id = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("id")?.asInt ?: 0
+        var rating = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("rating")?.asInt ?: 0
+        var review = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("review")?.asString ?: "No review"
 
-        val timestamp = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("timestamp")?.asLong ?: 0
-        val student = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("student")?.asString ?: "No username"
+        var timestamp = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("timestamp")?.asLong ?: 0
+        var student = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("student")?.asString ?: "No username"
+
+        id = jsonObject.get("id")?.asInt ?: 0
+        rating = jsonObject.get("rating")?.asInt ?: 0
+        review = jsonObject.get("review").asString ?: "No review"
+        timestamp = jsonObject.get("timestamp")?.asLong ?: 0
+        student = jsonObject.get("student").asString ?: "No username"
 
         /*val impressions = mutableListOf<UserImpression>()
         val userReview = UserReview(userName,timestamp,review)
