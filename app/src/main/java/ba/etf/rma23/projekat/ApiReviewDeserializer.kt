@@ -18,6 +18,9 @@ class ApiReviewDeserializer : JsonDeserializer<GameReview> {
         val rating = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("rating")?.asInt ?: 0
         val review = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("review")?.asString ?: "No review"
 
+        val timestamp = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("timestamp")?.asLong ?: 0
+        val student = jsonObject.getAsJsonArray("gamereviews")?.get(0)?.asJsonObject?.get("student")?.asString ?: "No username"
+
         /*val impressions = mutableListOf<UserImpression>()
         val userReview = UserReview(userName,timestamp,review)
         val userRating = UserRating(userName,timestamp, rating.toDouble())
@@ -25,6 +28,6 @@ class ApiReviewDeserializer : JsonDeserializer<GameReview> {
         impressions.add(userReview)
         impressions.add(userRating)*/
 
-        return GameReview(id,rating,review,-1,false)
+        return GameReview(id,rating,review,-1,false, timestamp, student)
     }
 }

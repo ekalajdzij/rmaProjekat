@@ -77,7 +77,7 @@ object GameReviewsRepository {
         }
     }
 
-    suspend fun getOfflineReviews(context: Context): List<GameReview> {
+    suspend fun getOfflineReviews(context: Context): Array<GameReview> {
         return withContext(Dispatchers.IO) {
             val db = AppDatabase.getInstance(context)
             val reviews = db.reviewDao().getOfflineReviews()

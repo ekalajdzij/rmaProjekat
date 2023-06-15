@@ -9,7 +9,7 @@ import ba.etf.rma23.projekat.data.repositories.GameReview
 interface ReviewDao {
 
     @Query("SELECT * FROM gamereview")
-    suspend fun getOfflineReviews(): List<GameReview>
+    suspend fun getOfflineReviews(): Array<GameReview>
 
 
     @Query("UPDATE gamereview SET online = 1 WHERE igdb_id = :id")
