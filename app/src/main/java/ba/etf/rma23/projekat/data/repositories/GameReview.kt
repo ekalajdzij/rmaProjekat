@@ -8,7 +8,7 @@ import kotlin.random.Random
 
 @Entity
 data class GameReview (
-    @PrimaryKey var id: Int,
+    @PrimaryKey(autoGenerate = true) var id: Int,
     @ColumnInfo(name = "rating") @SerializedName("rating") val rating : Int?,
     @ColumnInfo(name = "review") @SerializedName("review") val review: String?,
     @ColumnInfo(name = "igdb_id") var igdb_id:Int,
@@ -16,7 +16,7 @@ data class GameReview (
     @SerializedName("student") val userName: String,
     @SerializedName("timestamp") val timestamp: String
     //@ColumnInfo(name = "savedGameId") @SerializedName("GameId") val savedGameId: Int
-){
+) {
     constructor(
         rating: Int?,
         review: String?,
@@ -24,10 +24,5 @@ data class GameReview (
         online: Boolean,
         username: String,
         timestamp: String
-    ) : this(getRandomNumberInRange(3,19000), rating, review, igdb_id, online, username,timestamp)
-}
-private fun getRandomNumberInRange(start: Int, end: Int): Int {
-    require(start <= end) { "Invalid range" }
-
-    return Random.nextInt(start, end + 1)
+    ) : this(0, rating, review, igdb_id, online, username, timestamp)
 }
