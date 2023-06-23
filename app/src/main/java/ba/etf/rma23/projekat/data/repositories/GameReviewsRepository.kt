@@ -69,20 +69,25 @@ object GameReviewsRepository {
                         AccountGamesRepository.saveGame(game)
                     }
                 }
-                addReviewsForGame(review.igdb_id, review)
+                val resposne = revRetrofit.addReviewForGame(ReviewBody(review.review!!, review.rating!!), review.igdb_id)
                 return@withContext true
             } catch(e : Exception) {
-                addOfflineReviews(context, review)
+                val db = AppDatabase.getInstance(context)
+                db.reviewDao().addOfflineReview(review)
                 return@withContext false
             }
         }
     }
 
-    suspend fun getOfflineReviews(context: Context): Array<GameReview> {
+    suspend fun getOfflineReviews(context: Context): List<GameReview> {
         return withContext(Dispatchers.IO) {
-            val db = AppDatabase.getInstance(context)
-            val reviews = db.reviewDao().getOfflineReviews()
-            return@withContext reviews
+            try {
+                val db = AppDatabase.getInstance(context)
+                val result = db.reviewDao().getOfflineReviews()
+                return@withContext result
+            } catch(e: Exception) {
+                return@withContext emptyList()
+            }
         }
     }
 

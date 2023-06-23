@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace 'ba.etf.unsa.rma23.projekat'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "ba.etf.unsa.rma.videogameproject"
         minSdk 29
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -69,10 +69,10 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:+"
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0'
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
-    implementation("androidx.room:room-runtime:+")
-    annotationProcessor "androidx.room:room-compiler:+"
-    implementation("androidx.room:room-ktx:+")
-    kapt("androidx.room:room-compiler:+")
+    implementation('androidx.room:room-runtime:2.6.0-alpha01')
+    annotationProcessor 'androidx.room:room-compiler:2.6.0-alpha01'
+    implementation('androidx.room:room-ktx:2.6.0-alpha01')
+    kapt('androidx.room:room-compiler:2.6.0-alpha01')
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
 
 

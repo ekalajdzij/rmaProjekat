@@ -122,8 +122,7 @@ class GameDetailsFragment : Fragment() {
                 val username = usernameEditText.text.toString()
                 val review = reviewEditText.text.toString()
                 val rating = ratingEditText.text.toString().toInt()
-                val idReview = getRandomNumberInRange(1,1000)
-                val gameReview = GameReview(idReview,rating, review, gid, false, System.currentTimeMillis(), username)
+                val gameReview = GameReview(rating, review, gid, false, username, System.currentTimeMillis().toString())
                 CoroutineScope(Job() + Dispatchers.Main).launch{
                     val response = GameReviewsRepository.sendReview(requireContext(),gameReview)
                     if (response) onSuccess()
@@ -173,12 +172,6 @@ class GameDetailsFragment : Fragment() {
         load("https://"+game.coverImage).
         placeholder(R.drawable.placeholder).error(id).fallback(id).into(coverImageView)
 
-    }
-
-    private fun getRandomNumberInRange(start: Int, end: Int): Int {
-        require(start <= end) { "Invalid range" }
-
-        return Random.nextInt(start, end + 1)
     }
 
     fun onSuccess() {

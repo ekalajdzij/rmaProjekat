@@ -34,6 +34,6 @@ class ApiReviewDeserializer : JsonDeserializer<GameReview> {
         impressions.add(userReview)
         impressions.add(userRating)*/
 
-        return GameReview(id,rating,review,-1,false, timestamp, student)
+        return GameReview(id,rating,review,-1,false, student, timestamp.toString())
     }
 }

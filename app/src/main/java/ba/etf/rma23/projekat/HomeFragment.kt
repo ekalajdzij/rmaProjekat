@@ -1,5 +1,9 @@
 package ba.etf.rma23.projekat
+import android.content.Context
 import android.content.res.Configuration
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -102,7 +106,14 @@ class HomeFragment : Fragment() {
                 gameAdapter.updateGames(games)
 
             }
-            var game = games[0]
+            var game : Game
+            if (isConnectedToInternet()) {
+                 game = games[0]
+            }
+            else {
+                games = GameData.getAll()
+                game = games[0]
+            }
             detailsNavItem.setOnClickListener {
                 val gid = bundle!!.getInt("id",0)
                 runBlocking {
@@ -145,6 +156,18 @@ class HomeFragment : Fragment() {
     fun onError() {
         val toast = Toast.makeText(context, "Search error", Toast.LENGTH_SHORT)
         toast.show()
+    }
+    private fun isConnectedToInternet(): Boolean {
+        val connectivityManager =
+            context?.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network = connectivityManager?.activeNetwork
+            val capabilities = connectivityManager?.getNetworkCapabilities(network)
+            capabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
+        } else {
+            val networkInfo = connectivityManager?.activeNetworkInfo
+            networkInfo?.isConnected == true
+        }
     }
 
     private fun showGameDetails(game: Game) {

@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import ba.etf.rma23.projekat.data.repositories.GameReview
 
-@Database(entities = arrayOf(GameReview::class), version = 3)
+@Database(entities = arrayOf(GameReview::class), version = 7)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun reviewDao(): ReviewDao
     companion object {
